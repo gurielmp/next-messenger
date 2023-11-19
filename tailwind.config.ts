@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')({ strategy: 'class' }),
+  ],
 }
 export default config
