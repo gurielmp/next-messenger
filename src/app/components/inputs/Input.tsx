@@ -1,7 +1,7 @@
 "use client"
 
 import clsx from "clsx"
-import { FieldError, FieldValues, UseFormRegister } from "react-hook-form"
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form"
 
 interface InputProps {
   label: string
@@ -9,7 +9,7 @@ interface InputProps {
   type?: string
   required?: boolean
   register: UseFormRegister<FieldValues>
-  errors: FieldError
+  errors: FieldErrors
   disabled?: boolean
 }
 
