@@ -20,7 +20,7 @@ export default function AuthForm() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    if (session.status === "authenticated") {
+    if (session?.status === "authenticated") {
       router.push("/users")
     }
   }, [session?.status, router])
@@ -51,7 +51,7 @@ export default function AuthForm() {
     if (variant === "REGISTER") {
       axios
         .post("/api/register", data)
-        .then(() => signIn("credentials", data))
+        .then(() => signIn("credentials", { ...data, redirect: false }))
         .catch(() => toast.error("Something went wrong!"))
         .finally(() => setIsLoading(false))
     }
